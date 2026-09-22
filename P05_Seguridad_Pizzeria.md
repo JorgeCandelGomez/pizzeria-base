@@ -107,10 +107,10 @@ Genera el archivo `.htpasswd` definiendo el usuario **`admin`** y una contraseñ
 echo "admin:$(openssl passwd -apr1 'PizzeriaAdmin_2026!')" > .htpasswd
 ```
 
-Asigna permisos de solo lectura para mayor seguridad:
+Asigna permisos de lectura para que el contenedor Nginx pueda leerlo:
 
 ```bash
-chmod 600 .htpasswd
+chmod 644 .htpasswd
 ```
 
 *(Puedes comprobar que el archivo se ha creado correctamente y contiene el hash ejecutando `cat .htpasswd`).*
